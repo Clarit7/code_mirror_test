@@ -59,7 +59,7 @@ class App extends Component {
         <button className="Run" onClick={ ()=>{ run(); } }>run</button>
 
         <div className="Output"> 
-          {output? <pre style={{fontFamily:'consolas'}}>{output}</pre> : ''}
+          {output? <pre style={{fontFamily:'consolas', tabSize:4}}>{output}</pre> : ''}
         </div>
 
       </div>
