@@ -24,7 +24,6 @@ class App extends Component {
   render() {
     const {code} = this.state;
     const {output} = this.state;
-    const {err} = this.state;
 
     const run = async () => {
       const client = axios.create({
