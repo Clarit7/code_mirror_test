@@ -1,4 +1,11 @@
-# Install
+# Python coding platform project
+
+Frontend : React
+Backend : Node js
+
+<br/>
+
+## Install
 
 ```
 npm install
@@ -6,14 +13,13 @@ npm install
 
 <br/>
 
-# Setting
+## Setting
 
 Write ip or address in src/config.js
 
 <br/>
 
-
-# Run
+## Run
 
 ```
 npm start
