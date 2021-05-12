@@ -24,13 +24,14 @@ class App extends Component {
   render() {
     const {code} = this.state;
     const {output} = this.state;
+    const {err} = this.state;
 
     const run = async () => {
       const client = axios.create({
         baseURL:config.default.address + ':' + port,
       });
       const result = await client.post('/api', {code});
-      this.setState({output: result.data.result});
+      this.setState({output: result.data.output});
       console.log('send onclick');
     };
 
@@ -43,7 +44,7 @@ class App extends Component {
 
         <CodeMirror
           value={code}
-          width={'1200px'}
+          width={'1500px'}
           height={'800px'}
           options={{
             theme: 'monokai',
@@ -59,7 +60,7 @@ class App extends Component {
         <button className="Run" onClick={ ()=>{ run(); } }>run</button>
 
         <div className="Output"> 
-          {output ? output.map( line => { return (<span>{line}<br/></span>) }) : ''}
+          {output? <pre style={{fontFamily:'consolas'}}>{output}</pre> : ''}
         </div>
 
       </div>

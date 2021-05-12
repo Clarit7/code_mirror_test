@@ -15,11 +15,16 @@ router.post('/', function(req, res) {
     console.log('code execution request');
 
     PythonShell.runString(code, options, function (err, results) {
-        if (err) throw err;
-        console.log('finished');
-        console.log(results);
-
-        res.send({result: results});
+        if (err) {
+            console.log('error');
+            console.log(err.stack);
+            res.send({output: err.stack});
+        }
+        else {
+            console.log('finished');
+            console.log(results);
+            res.send({output: results.join('\n')});
+        }
     });
 });
 
